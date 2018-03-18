@@ -1,0 +1,11 @@
+@(name1 : String)(implicit flash:Flash, request: RequestHeader)
+
+@flash.get("Success").getOrElse("Welcome!")
+<p>@request.session.get("Name")</p>
+<p>@request.session.get("Email")</p>
+<p>@request.session.get("Password")</p>
+<p>@request.session.get("confirmPassword")</p>
+
+@main("Welcome to Play") {
+<h1>RUN your dream solution @name1</h1>
+}

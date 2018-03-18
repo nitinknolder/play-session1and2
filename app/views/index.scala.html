@@ -1,0 +1,13 @@
+@import  play.filters.csrf.CSRF._
+
+@(userForm: Form[Student])(implicit messages: MessagesProvider,request: RequestHeader)
+@import helper._
+
+@helper.form(action = routes.HomeController.userPost()) {
+@CSRF.formField
+@helper.inputText(userForm("name"))
+@helper.inputText(userForm("email"))
+@helper.inputPassword(userForm("password"))
+@helper.inputPassword(userForm("confirmPassword"))
+<button type = "submit">CliCK ME IF U can</button>
+}
